@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Solutions</title>
+     <style>
+        header {
+            font-size: 50px;
+            margin-left: 350px;
+            margin-top: 20px;
+        }
+        body {
+
+            background-color: #DBEDFF;
+        }
+        button {
+            padding: 10px;
+            margin: 4px;
+            background-color: #4B5556;
+            border: 0px;
+        }
+        pre{
+            background-color:#003040;
+        }
+    </style>
+</head>
+<body>
+    <p id="1">Digital root is the recursive sum of all the digits in a number.</p>
+<pre><code>
+int digital_root(int n) {
+    int s = 0;
+    while (n != 0) {
+        s += n % 10;
+        n /= 10;
+    }
+    if (s >= 10)
+        s = digital_root(s);
+    return s;
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="python.html#1">Python</a></button>
+    <button><a href="java.html#1">Java</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="2">Given an array of integers, construct a product array such that each element is the product of all other elements.</p>
+<pre><code>
+#include &lt;vector&gt;
+
+std::vector&lt;long long&gt; productArray(const std::vector&lt;int&gt;& numbers) {
+    int n = numbers.size();
+    std::vector&lt;long long&gt; arr(n, 1);
+    for (int i = 0; i &lt; n; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            if (j != i)
+                arr[i] *= numbers[j];
+        }
+    }
+    return arr;
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="python.html#2">Python</a></button>
+    <button><a href="cSh.html#1">C#</a></button>
+    <button><a href="java.html#2">Java</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="3">Check if a string is a palindrome</p>
+<pre><code>
+#include &lt;string&gt;
+
+bool isPalindrome(const std::string&amp; str) {
+    int left = 0;
+    int right = str.length() - 1;
+    while (left &lt; right) {
+        if (str[left] != str[right])
+            return false;
+        left++;
+        right--;
+    }
+    return true;
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="cSh.html#2">C#</a></button>
+    <button><a href="java.html#3">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="4">Find the largest element in an array</p>
+<pre><code>
+int findMax(const std::vector&lt;int&gt;& arr) {
+    int max = arr[0];
+    for (int i = 1; i &lt; arr.size(); i++) {
+        if (arr[i] &gt; max)
+            max = arr[i];
+    }
+    return max;
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="python.html#3">Python</a></button>
+    <button><a href="cSh.html#3">C#</a></button>
+    <button><a href="java.html#4">Java</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+</body>
+</html>
