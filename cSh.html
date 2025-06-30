@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Solutions</title>
+</head>
+<body>
+    <p>Digital root is the recursive sum of all the digits in a number.</p>
+<pre><code>
+public class Solution {
+    public static int DigitalRoot(int n) {
+        int s = 0;
+        while (n != 0) {
+            s += n % 10;
+            n /= 10;
+        }
+        if (s >= 10)
+            s = DigitalRoot(s);
+        return s;
+    }
+}
+</code></pre>
+<hr>
+<p>Given an array of integers, construct a product array such that each element is the product of all other elements.</p>
+<pre><code>
+public class Solution {
+    public static long[] ProductArray(int[] numbers) {
+        long[] arr = new long[numbers.Length];
+        for (int i = 0; i &lt; arr.Length; i++) {
+            arr[i] = 1;
+            for (int j = 0; j &lt; arr.Length; j++) {
+                if (j != i)
+                    arr[i] *= numbers[j];
+            }
+        }
+        return arr;
+    }
+}
+</code></pre>
+<hr>
+<p>Check if a string is a palindrome</p>
+<pre><code>
+public class Solution {
+    public static bool IsPalindrome(string str) {
+        int left = 0;
+        int right = str.Length - 1;
+        while (left &lt; right) {
+            if (str[left] != str[right]) return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+</code></pre>
+<hr>
+<p>Find the largest element in an array</p>
+<pre><code>
+public class Solution {
+    public static int FindMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i &lt; arr.Length; i++) {
+            if (arr[i] &gt; max) max = arr[i];
+        }
+        return max;
+    }
+}
+</code></pre>
+</body>
+</html>

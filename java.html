@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>java soulotion</title>
+    <style>
+        header {
+            font-size: 50px;
+            margin-left: 350px;
+            margin-top: 20px;
+        }
+        body {
+
+            background-color: #DBEDFF;
+        }
+        button {
+            padding: 10px;
+            margin: 4px;
+            background-color: #4B5556;
+            border: 0px;
+        }
+        pre{
+            background-color:#003040;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button><a href="index.html">go home</a></button>
+    </nav>
+    <p id="1">
+        Digital root is the recursive sum of all the digits in a number.<br>
+        Given n, take the sum of the digits of n.<br> If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer
+    </p>
+    <pre>
+        <code>public class DRoot {
+            public static int digital_root(int n) {
+            int s=0;
+            while(n!=0)
+            {
+            s=s+n%10;
+            n=n/10;
+            }
+            if(s>=10)
+            s=digital_root(s);
+            return s;
+            }
+            }</code>
+    </pre>
+     <nav>see solution also in
+    <button><a href="python.html#1">Python</a></button>
+    <button><a href="cpp.html#1">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+    <hr>
+    <p id="2">
+        Given an array/list [] of integers,Construct a product array Of same size<br>Such That prod[i] is equal to The Product of all the elements of Arr[] except Arr[i]
+    </p>
+    <pre><code>
+        public class Solution
+        {
+        public static long[] productArray(int[] numbers)
+        {
+        long arr[] = new long[numbers.length];
+        for(int i = 0; i &lt; arr.length; i++)
+        {
+        arr[i] = 1;
+        for(int j = 0; j &lt; arr.length; j++)
+        {
+        if(j != i)
+        arr[i] = arr[i] * numbers[j];
+        }
+        }
+        return arr;
+        }
+        }
+    </code></pre>
+    <nav>see solution also in
+    <button><a href="python.html#2">Python</a></button>
+    <button><a href="cSh.html#1">C#</a></button>
+    <button><a href="cpp.html#2">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   <hr>
+    <p id="3">
+        Check if a string is a palindrome
+    </p>
+    <pre><code>
+        public class Solution {
+        public static boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) return false;
+            left++;
+            right--;
+            }
+            return true;
+            }
+            }
+        </code></pre>
+        <nav>see solution also in
+    <button><a href="cSh.html#2">C#</a></button>
+    <button><a href="cpp.html#3">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   <hr>
+        <p id="4">
+            Find the largest element in an array
+        </p>
+        <pre><code>
+            public class Solution {
+            public static int findMax(int[] arr) {
+            int max = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] > max) max = arr[i];
+                }
+                return max;
+                }
+                }
+            </code></pre>
+            <nav>see solution also in
+    <button><a href="python.html#3">Python</a></button>
+    <button><a href="cSh.html#3">C#</a></button>
+    <button><a href="cpp.html#4">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+        </body>
+    </html>

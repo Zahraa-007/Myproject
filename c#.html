@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Solutions</title>
+     <style>
+        header {
+            font-size: 50px;
+            margin-left: 350px;
+            margin-top: 20px;
+        }
+        body {
+
+            background-color: #DBEDFF;
+        }
+        button {
+            padding: 10px;
+            margin: 4px;
+            background-color: #4B5556;
+            border: 0px;
+        }
+        pre{
+            background-color:#003040;
+        }
+    </style>
+</head>
+<body>
+<p id="1">Given an array of integers, construct a product array such that each element is the product of all other elements.</p>
+<pre><code>
+public class Solution {
+    public static long[] ProductArray(int[] numbers) {
+        long[] arr = new long[numbers.Length];
+        for (int i = 0; i &lt; arr.Length; i++) {
+            arr[i] = 1;
+            for (int j = 0; j &lt; arr.Length; j++) {
+                if (j != i)
+                    arr[i] *= numbers[j];
+            }
+        }
+        return arr;
+    }
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="python.html#2">Python</a></button>
+    <button><a href="java.html#2">Java</a></button>
+    <button><a href="cpp.html#2">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="2">Check if a string is a palindrome</p>
+<pre><code>
+public class Solution {
+    public static bool IsPalindrome(string str) {
+        int left = 0;
+        int right = str.Length - 1;
+        while (left &lt; right) {
+            if (str[left] != str[right]) return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="java.html#3">Java</a></button>
+    <button><a href="cpp.html#3">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="3">Find the largest element in an array</p>
+<pre><code>
+public class Solution {
+    public static int FindMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i &lt; arr.Length; i++) {
+            if (arr[i] &gt; max) max = arr[i];
+        }
+        return max;
+    }
+}
+</code></pre>
+<nav>see solution also in
+    <button><a href="python.html#3">Python</a></button>
+    <button><a href="java.html#4">Java</a></button>
+    <button><a href="cpp.html#4">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+</body>
+</html>

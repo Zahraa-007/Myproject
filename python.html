@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Solutions</title>
+     <style>
+        header {
+            font-size: 50px;
+            margin-left: 350px;
+            margin-top: 20px;
+        }
+        body {
+
+            background-color: #DBEDFF;
+        }
+        button {
+            padding: 10px;
+            margin: 4px;
+            background-color: #4B5556;
+            border: 0px;
+        }
+        pre{
+            background-color:#003040;
+        }
+    </style>
+</head>
+<body>
+    <p  id="1">Digital root is the recursive sum of all the digits in a number.</p>
+<pre><code>
+def digital_root(n):
+    s = 0
+    while n != 0:
+        s += n % 10
+        n //= 10
+    if s >= 10:
+        s = digital_root(s)
+    return s
+</code></pre>
+<nav>see solution also in
+    <button><a href="java.html#1">Java</a></button>
+    <button><a href="cpp.html#1">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="2">Given an array of integers, construct a product array such that each element is the product of all other elements.</p>
+<pre><code>
+def product_array(numbers):
+    arr = []
+    for i in range(len(numbers)):
+        prod = 1
+        for j in range(len(numbers)):
+            if i != j:
+                prod *= numbers[j]
+        arr.append(prod)
+    return arr
+</code></pre>
+<nav>see solution also in
+    <button><a href="java.html#2">Java</a></button>
+    <button><a href="cSh.html#1">C#</a></button>
+    <button><a href="cpp.html#2">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+<hr>
+<p id="3">Find the largest element in an array</p>
+<pre><code>
+def find_max(arr):
+    max_val = arr[0]
+    for i in range(1, len(arr)):
+        if arr[i] &gt; max_val:
+            max_val = arr[i]
+    return max_val
+</code></pre>
+<nav>see solution also in
+    <button><a href="java.html#4">Java</a></button>
+    <button><a href="cSh.html#3">C#</a></button>
+    <button><a href="cpp.html#4">C++</a></button>
+    or <button><a href="index.html">go home</a></button>
+    </nav>
+   
+</body>
+</html>
